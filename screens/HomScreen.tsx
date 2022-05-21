@@ -1,6 +1,7 @@
 import { StyleSheet, View, } from 'react-native';
 import Button from '../components/shareds/Button';
 import UrlView from '../components/shareds/UrlView';
+import { backgroundColor } from '../constants/Colors';
 
 export default function HomeScreen(props: any) {
 
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     paddingTop: 80,
-    backgroundColor: 'white'
+    backgroundColor: backgroundColor
   },
   wrapper: {
     flex: 1,

@@ -2,6 +2,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import Button from '../components/shareds/Button';
+import { backgroundColor } from '../constants/Colors';
 import { fetchRepo } from '../services/CheckMyRepoService';
 export default function RepositoryScreen(props: any) {
 
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: 'white'
+    backgroundColor: backgroundColor
   },
   wrapper: {
     flex: 1,

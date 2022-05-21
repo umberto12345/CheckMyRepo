@@ -1,7 +1,7 @@
-import { NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import {  ColorSchemeName,ImageSourcePropType } from 'react-native';
+import { ColorSchemeName, ImageSourcePropType } from 'react-native';
 import file from './../assets/back_icon/back.png';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomScreen';
@@ -10,8 +10,9 @@ import { RootStackParamList, } from '../types';
 import RepositoryScreen from '../screens/RepositoryScreen';
 import SendScreen from '../screens/SendScreen';
 import DoneScreen from '../screens/DoneScreen';
+import { backgroundColor } from '../constants/Colors';
 
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+export default function Navigation() {
   return (
     <NavigationContainer>
       <RootNavigator />
@@ -27,7 +28,7 @@ function RootNavigator() {
 
     headerShadowVisible: false,
     headerBackImageSource: file as ImageSourcePropType,
-    //r headerTintColor: '#fff',
+    headerStyle: { backgroundColor: backgroundColor },
     headerTitleStyle: {
       fontWeight: 'bold',
     }

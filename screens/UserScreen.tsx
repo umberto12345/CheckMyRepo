@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import Button from '../components/shareds/Button';
-import { View } from '../components/Themed';
+import { backgroundColor } from '../constants/Colors';
 // // @ts-ignore
 
 export default function UserScreen(props: any) {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: 'white'
+    backgroundColor: backgroundColor
   },
   wrapper: {
     flex: 1,
