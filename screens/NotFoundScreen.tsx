@@ -1,15 +1,28 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, } from 'react-native';
 
-import { Text, View } from '../components/Themed';
 import { RootStackScreenProps } from '../types';
+import UrlView from '../components/shareds/UrlView';
+import Button from '../components/shareds/Button';
 
-export default function NotFoundScreen({ navigation }: RootStackScreenProps<'NotFound'>) {
+export default function NotFoundScreen({ route, navigation }: RootStackScreenProps<'NotFound'>) {
+  let user = (route?.params as any)?.user ?? '';
+  let repositoryName = (route?.params as any)?.repositoryName ?? '';
+  let message = (route?.params as any)?.message ?? ''
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>This screen doesn't exist.</Text>
-      <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-        <Text style={styles.linkText}>Go to home screen!</Text>
-      </TouchableOpacity>
+    <View
+      style={styles.container}
+    >
+      <UrlView array={[user, repositoryName]} message={message} />
+      <View style={styles.wrapper}>
+
+        <View style={{
+          justifyContent: 'flex-end', backgroundColor: '#f08080',
+        }}>
+          <Button title={'Check'.toUpperCase()} onPress={() => {
+            { navigation.replace('Root') }
+          }}></Button>
+        </View>
+      </View>
     </View>
   );
 }
@@ -17,20 +30,18 @@ export default function NotFoundScreen({ navigation }: RootStackScreenProps<'Not
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 20,
+    paddingTop: 80,
+    backgroundColor: '#f08080',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  wrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
   },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-  linkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+  url: {
+    fontSize: 30,
+    color: 'grey'
+  }
 });
