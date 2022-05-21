@@ -13,7 +13,7 @@ export default function DoneScreen(props: any) {
       </SansText>
       <View style={styles.wrapper}>
         <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', width: '100%' }}>
-          <Button title={'Done'.toUpperCase()} onPress={() => {
+          <Button title={'Cool'.toUpperCase()} onPress={() => {
             { props?.navigation.replace('Root') }
           }}></Button>
         </View>
